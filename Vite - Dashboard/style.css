@@ -1,6 +1,10 @@
 :root {
     --shadow: 0 0 20px -5px rgb(159, 156, 156);
     --object-color: rgb(238, 238, 238);
+    --button-color: rgb(160, 160, 160);
+    --selected-button: rgb(222, 222, 222);
+
+    --font-family: 'Courier New';
 }
 
 *,
@@ -32,6 +36,7 @@ h2 {
 .center {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .clock {
     display: flex;
@@ -60,9 +65,9 @@ h2 {
 .title-text {
     font-size: 3rem;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    max-width: 20rem;
+    font-family: var(--font-family);
     outline: none;
+    max-width: 50rem;
 }
 .card-wrapper {
     grid-area: cards;
@@ -92,7 +97,7 @@ h2 {
 }
 .text {
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
 }
 footer {
   display: flex;
@@ -122,42 +127,113 @@ footer {
     border-radius: 2rem;
     width: calc(100% - 2.5rem);
     height: calc(100% - 6rem);
+    overflow-wrap: break-word;
     ::-webkit-scrollbar {
         display: none;
     }
     -ms-overflow-style: none;
+    
 }
 .noteboard-text {
     padding: 2rem;
     outline: none;
-    max-width: 17rem;
+    max-width: 19rem;
     max-height: 23rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
     overflow-y: auto;
     scrollbar-width: none;
+    text-wrap: wrap;
 }
 
 .link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "links"
+    "add";
+    grid-template-rows: auto 1fr auto;
     gap: 1rem;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
 }
-.saved-link {
+.link-title {
+    grid-area: title;
+
+}
+.saved-links {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+    grid-area: links;
+    justify-self: center;
+    align-items: start;
+    width: 18rem;
+    
+}
+.link-card {
+    display: flex;
     align-items: center;
-    width: calc(100% - 3rem);
+    width: 100%;
     height: 4rem;
     background-color: white;
     border-radius: 1rem;
+    padding: 0 1rem;
+    min-height: 64px;
+    
+}
+.link-add-btn {
+    grid-area: add;
+    justify-self: center;
+    width: 12rem;
+    height: 3rem;
+    background-color: var(--selected-button);
+    border-radius: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+.link-add-btn:hover {
+    background-color: var(--button-color);
+}
+
+.link-text {
+    margin-right: 3rem;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: bold;
+    color: black;
+    margin-left: 1rem;
+    flex-grow: 1;
+}
+.link-text::first-letter {
+    text-transform: uppercase;
+}
+.favicon {
+    width: 2rem;
 }
 .remove-btn {
-    background-color: rgb(156, 156, 156);
-    color: white;
+    display: flex;
+    background-color: var(--selected-button);
     border: none;
     border-radius: 5px;
-    margin-right: 1rem;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.remove-btn:hover {
+    background-color: var(--button-color);
+}
+#saved-links {
+    max-height: 20rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-
+.trash-bin {
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+}

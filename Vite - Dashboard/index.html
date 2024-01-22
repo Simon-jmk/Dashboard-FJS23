@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="main"></script>
+    <script type="module" src="main.js"></script>
+    <script src="links.js"></script>
   </head>
   <body>
     <main>
@@ -17,15 +18,24 @@
           </div>
         </div>
         <div class="title">
-          <h1 class="title-text" id="dashboardTitle" contenteditable="true">John Doe Dashboard</h1>
+          <h1
+            class="title-text"
+            id="dashboardTitle"
+            contenteditable="true"
+            spellcheck="false"
+          >
+            John Doe Dashboard
+          </h1>
         </div>
         <div class="card-wrapper">
           <div class="card-divider">
             <div class="card link">
-              <h2 class="text">Snabblänkar</h2>
-              <div class="saved-link">
-                <a href=""></a>
-                <button class="remove-btn">x</button>
+              <h2 class="text link-title">Snabblänkar</h2>
+              <div id="saved-links" class="saved-links">
+                <div class="link-card"></div>
+              </div>
+              <div id="add-link-btn" class="link-add-btn center text">
+                <h4>Lägg till Länk</h4>
               </div>
             </div>
             <div class="card weather">
@@ -39,11 +49,16 @@
             <div class="card note">
               <h2 class="text">Anteckningar</h2>
               <div class="noteboard">
-                <div contenteditable="true" class="noteboard-text"></div>
+                <div
+                  contenteditable="true"
+                  class="noteboard-text"
+                  spellcheck="false"
+                ></div>
               </div>
             </div>
           </div>
         </div>
+        <svg></svg>
         <footer>
           <div class="background">
             <div class="bg-button">
