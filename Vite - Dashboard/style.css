@@ -2,7 +2,7 @@
     --shadow: 0 0 20px -5px rgb(159, 156, 156);
     --object-color: rgb(238, 238, 238);
     --button-color: rgb(222, 222, 222);
-    --selected-button: rgb(160, 160, 160);
+    --selected-button: rgb(200, 200, 200);
     
 
     --font-family: 'Courier New';
@@ -91,7 +91,7 @@
 }
 
 .card {
-    background-color: rgba(190, 190, 190, 0.8);
+    background-color: rgba(190, 190, 190, 0.6);
     border-radius: 2rem;
     min-height: 30rem;
     min-width: 20rem;
@@ -254,8 +254,7 @@ footer {
     justify-self: center;
     align-items: end;
 }
-
-.bg-button {
+.prompt-button {
     display: flex;
     justify-content: center;
     width: 20rem;
@@ -266,6 +265,6 @@ footer {
     margin-bottom: 5rem;
 }
 
-.bg-button:hover {
+.prompt-button:hover {
     background-color: var(--selected-button);
 }
