@@ -62,6 +62,7 @@ h2 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     max-width: 20rem;
+    outline: none;
 }
 .card-wrapper {
     grid-area: cards;
@@ -110,3 +111,53 @@ footer {
     box-shadow: var(--shadow);
     margin-bottom: 5rem;
 }
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.noteboard {
+    background-color: white;
+    border-radius: 2rem;
+    width: calc(100% - 2.5rem);
+    height: calc(100% - 6rem);
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+}
+.noteboard-text {
+    padding: 2rem;
+    outline: none;
+    max-width: 17rem;
+    max-height: 23rem;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+.saved-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 3rem);
+    height: 4rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+.remove-btn {
+    background-color: rgb(156, 156, 156);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+  }
+
