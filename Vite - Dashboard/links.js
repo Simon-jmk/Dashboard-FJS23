@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!url.startsWith('https://')) {
     return `https://${url}`;
   }
+  
   return url;
 };
 
@@ -22,12 +23,15 @@ const titleShortener = (title) => {
   if (title.length > 11) {
     return title.substring(0, 11) + '...';
   }
+  
   return title;
+  
 };
   
 const createLinkCard = (link, title) => { 
   const formattedLink = httpsUrl(link);
   const formattedTitle = titleShortener(title);
+  
   return`
   <div class="link-card">
     <a href="${formattedLink}" target="_blank"><img src="${fetchFavicon(link)}" alt="Favicon" class="favicon"/></a>
