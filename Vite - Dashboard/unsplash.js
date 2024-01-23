@@ -3,7 +3,7 @@ import axios from "axios";
 // UNSPLASH BACKGROUND
 function getPromptedImage() {
     const userQuery = prompt("Enter your query for the image (e.g., 'nature', 'cityscape'):");
-    const query = userQuery || 'gradient+background'; // Use 'light gradient' if no user input
+    const query = userQuery || 'gradient+background';
     getImage(query);
 }
 
@@ -14,7 +14,6 @@ function getImage(query) {
     const fetchImage = async () => {
         try {
             const response = await axios.get(`${API_URL}?query=${query}&orientation=landscape&client_id=${UNSPLASH_API_KEY}`);
-            console.log('Image:', response.data);
             updateImageOnPage(response.data);
         } catch (error) {
             console.error('Error fetching image:', error);

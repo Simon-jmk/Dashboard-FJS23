@@ -310,8 +310,19 @@ footer {
 .weather-info > h2 {
     margin-bottom: 1rem;
 }
+.weather-svg-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -2rem;
+    margin-top: -1rem;
+
+}
+.weather-svg {
+    width: 100px; /* or your preferred size */
+    height: 100px; /* or your preferred size */
+}
 .weather-info > h2::first-letter {
     text-transform: uppercase;
-    
 }
+
 
