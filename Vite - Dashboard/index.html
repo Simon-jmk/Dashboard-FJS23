@@ -8,6 +8,7 @@
     <script type="module" src="main.js"></script>
     <script src="links.js"></script>
     <script type="module" src="unsplash.js"></script>
+    <script type="module" src="wheather.js"></script>
   </head>
   <body>
     <main>
@@ -40,7 +41,12 @@
               </div>
             </div>
             <div class="card weather">
-              <h2 class="text">Dagens väder</h2>
+              <div id="tempStats"></div>
+              <h2 class="text weather-title">Dagens väder</h2>
+              <div id="weatherInfo" class="weather-info"></div>
+              <div id="getWeatherButton" class="weather-btn center text">
+                <h4>Sök stad</h4>
+              </div>
             </div>
           </div>
           <div class="card-divider">

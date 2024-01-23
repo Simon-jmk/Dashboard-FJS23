@@ -220,14 +220,11 @@ h2 {
 }
 
 .remove-btn {
-    display: flex;
     background-color: var(--button-color);
     border: none;
     border-radius: 5px;
     width: 32px;
     height: 32px;
-    justify-content: center;
-    align-items: center;
 }
 
 .remove-btn:hover {
@@ -251,7 +248,7 @@ h2 {
 footer {
     display: flex;
     grid-area: unsplash;
-    justify-self: center;
+    justify-content: center;
     align-items: end;
 }
 .prompt-button {
@@ -263,8 +260,58 @@ footer {
     background-color: var(--button-color);
     box-shadow: var(--shadow);
     margin-bottom: 5rem;
+
 }
 
 .prompt-button:hover {
     background-color: var(--selected-button);
 }
+
+
+.weather {
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "weather"
+    "add";
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+}
+
+.weather-title {
+    grid-area: title;    
+}
+.weather-info {
+    grid-area: weather;
+    background-color: white;
+    border-radius: 2rem;
+    width: 17rem;
+    height: 19rem;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.weather-btn {
+    grid-area: add;
+    justify-self: center;
+    width: 12rem;
+    height: 3rem;
+    background-color: var(--button-color);
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+
+}
+.weather-btn:hover {
+    background-color: var(--selected-button);
+}
+.weather-info > h4 {
+    font-family: var(--font-family);
+}
+.weather-info > h2 {
+    margin-bottom: 1rem;
+}
+.weather-info > h2::first-letter {
+    text-transform: uppercase;
+    
+}
+

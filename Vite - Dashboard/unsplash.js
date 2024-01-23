@@ -20,7 +20,6 @@ function getImage(query) {
             console.error('Error fetching image:', error);
         }
     };
-
     fetchImage();
 }
 
