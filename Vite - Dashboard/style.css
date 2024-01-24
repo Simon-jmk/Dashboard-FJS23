@@ -3,10 +3,9 @@
     --object-color: rgb(238, 238, 238);
     --button-color: rgb(222, 222, 222);
     --selected-button: rgb(200, 200, 200);
-    
-
     --font-family: 'Courier New';
 }
+
 *,
 *::before,
 *::after {
@@ -14,6 +13,12 @@
   margin: 0;
 }
 
+body {
+    color: black;
+    font-family: var(--font-family);
+}
+
+/* CONTAINER */
 .container {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
@@ -27,7 +32,34 @@
     row-gap: 5rem;
 }
 
-/* Time */
+/* GENERAL */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* BUTTONS */
+.button {
+    grid-area: add;
+    justify-self: center;
+    width: 12rem;
+    height: 3rem;
+    background-color: var(--button-color);
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.button:hover, .prompt-button:hover, .link-add-btn:hover, .remove-btn:hover {
+    background-color: var(--selected-button);
+}
+
+/* TIME SECTION */
 .time {
     grid-area: time;
     align-self: start;
@@ -56,7 +88,7 @@
     margin: auto;
 }
 
-/* Title */
+/* TITLE SECTION */
 .title {
     grid-area: title;
     display: flex;
@@ -71,7 +103,7 @@
     max-width: 50rem;
 }
 
-/* Cards */
+/* CARD GENERAL */
 .card-wrapper {
     grid-area: cards;
     display: flex;
@@ -98,57 +130,10 @@
     box-shadow: var(--shadow);
 }
 
-/* General */
-.center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.text {
-    color: black;
-    font-family: var(--font-family);
-}
-
-h2 {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-/* Note */
-.note {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.noteboard {
-    background-color: white;
-    border-radius: 2rem;
-    width: calc(100% - 2.5rem);
-    height: calc(100% - 6rem);
-    overflow-wrap: break-word;
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    -ms-overflow-style: none;
-}
-
-.noteboard-text {
-    padding: 2rem;
-    outline: none;
-    max-width: 19rem;
-    max-height: 23rem;
-    font-family: var(--font-family);
-    overflow-y: auto;
-    scrollbar-width: none;
-    text-wrap: wrap;
-}
-
-/* Link */
+/* LINK CARD */
 .link {
     display: grid;
+    justify-content: center;
     grid-template-areas: 
     "title"
     "links"
@@ -188,17 +173,6 @@ h2 {
 
 .link-add-btn {
     grid-area: add;
-    justify-self: center;
-    width: 12rem;
-    height: 3rem;
-    background-color: var(--button-color);
-    border-radius: 1rem;
-    padding: 0 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.link-add-btn:hover {
-    background-color: var(--selected-button);
 }
 
 .link-text {
@@ -227,10 +201,6 @@ h2 {
     height: 32px;
 }
 
-.remove-btn:hover {
-    background-color: var(--selected-button);
-}
-
 #saved-links {
     max-height: 20rem;
     overflow-y: auto;
@@ -244,13 +214,116 @@ h2 {
     pointer-events: none;
 }
 
-/* Footer */
+/* WEATHER CARD */
+.weather {
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "weather"
+    "add";
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+}
+
+.weather-title {
+    grid-area: title;    
+}
+
+.weather-info {
+    grid-area: weather;
+    background-color: white;
+    border-radius: 2rem;
+    width: 17rem;
+    height: 19rem;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.weather-info > h4 {
+    font-family: var(--font-family);
+}
+
+.weather-info > h2 {
+    margin-bottom: 1rem;
+}
+
+.weather-svg-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -2rem;
+    margin-top: -1rem;
+}
+
+.weather-svg {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-info > h2::first-letter {
+    text-transform: uppercase;
+}
+
+/* GIF CARD */
+.random {
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "gif"
+    "add";
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.gif {
+    max-width: 17rem;
+    max-height: 18rem;
+    object-fit: contain;
+}
+
+.gif-btn {
+    align-items: flex-end;
+}
+
+/* NOTE CARD */
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.noteboard {
+    background-color: white;
+    border-radius: 2rem;
+    width: calc(100% - 2.5rem);
+    height: calc(100% - 6rem);
+    overflow-wrap: break-word;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+}
+
+.noteboard-text {
+    padding: 2rem;
+    outline: none;
+    max-width: 19rem;
+    max-height: 23rem;
+    font-family: var(--font-family);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* FOOTER */
 footer {
     display: flex;
     grid-area: unsplash;
     justify-content: center;
     align-items: end;
 }
+
 .prompt-button {
     display: flex;
     justify-content: center;
@@ -260,69 +333,4 @@ footer {
     background-color: var(--button-color);
     box-shadow: var(--shadow);
     margin-bottom: 5rem;
-
 }
-
-.prompt-button:hover {
-    background-color: var(--selected-button);
-}
-
-
-.weather {
-    display: grid;
-    grid-template-areas: 
-    "title"
-    "weather"
-    "add";
-    grid-template-rows: auto 1fr auto;
-    gap: 1rem;
-}
-
-.weather-title {
-    grid-area: title;    
-}
-.weather-info {
-    grid-area: weather;
-    background-color: white;
-    border-radius: 2rem;
-    width: 17rem;
-    height: 19rem;
-    margin-bottom: 1rem;
-    margin: 0 auto;
-    padding: 2rem;
-}
-.weather-btn {
-    grid-area: add;
-    justify-self: center;
-    width: 12rem;
-    height: 3rem;
-    background-color: var(--button-color);
-    border-radius: 1rem;
-    margin-bottom: 0.5rem;
-
-}
-.weather-btn:hover {
-    background-color: var(--selected-button);
-}
-.weather-info > h4 {
-    font-family: var(--font-family);
-}
-.weather-info > h2 {
-    margin-bottom: 1rem;
-}
-.weather-svg-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: -2rem;
-    margin-top: -1rem;
-
-}
-.weather-svg {
-    width: 100px; /* or your preferred size */
-    height: 100px; /* or your preferred size */
-}
-.weather-info > h2::first-letter {
-    text-transform: uppercase;
-}
-
-

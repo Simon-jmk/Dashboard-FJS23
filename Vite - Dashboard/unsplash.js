@@ -2,7 +2,7 @@ import axios from "axios";
 
 // UNSPLASH BACKGROUND
 function getPromptedImage() {
-    const userQuery = prompt("Enter your query for the image (e.g., 'nature', 'cityscape'):");
+    const userQuery = prompt("Ange sökord för din nya bakgrund (Cancel ger dig en slumpad gradient):");
     const query = userQuery || 'gradient+background';
     getImage(query);
 }

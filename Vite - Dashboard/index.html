@@ -9,14 +9,15 @@
     <script src="links.js"></script>
     <script type="module" src="unsplash.js"></script>
     <script type="module" src="wheather.js"></script>
+    <script type="module" src="giphy.js"></script>
   </head>
   <body>
     <main>
       <div class="container">
         <div class="time">
           <div class="clock">
-            <h3 class="center text" id="time"></h3>
-            <h4 class="center text" id="date"></h4>
+            <h3 class="center" id="time"></h3>
+            <h4 class="center" id="date"></h4>
           </div>
         </div>
         <div class="title">
@@ -32,33 +33,38 @@
         <div class="card-wrapper">
           <div class="card-divider">
             <div class="card link">
-              <h2 class="text link-title">Snabblänkar</h2>
+              <h2 class="link-title">Snabblänkar</h2>
               <div id="saved-links" class="saved-links">
                 <div class="link-card"></div>
               </div>
-              <div id="add-link-btn" class="link-add-btn center text">
+              <div id="add-link-btn" class="button center">
                 <h4>Lägg till Länk</h4>
               </div>
             </div>
             <div class="card weather">
               <div id="tempStats"></div>
-              <h2 class="text weather-title">Dagens väder</h2>
+              <h2 class="weather-title">Dagens väder</h2>
               <div id="weatherInfo" class="weather-info">
                 <div class="weather-icon">
                   <img  id="weather-svg" src="" alt="">
                 </div>
               </div>
-              <div id="getWeatherButton" class="weather-btn center text">
+              <div id="getWeatherButton" class="button center">
                 <h4>Sök stad</h4>
               </div>
             </div>
           </div>
           <div class="card-divider">
             <div class="card random">
-              <h2 class="text">Random</h2>
+              <h2>Random GIF</h2>
+              <div id="gif">
+              </div>
+              <div id="add-link-btn" class="center button">
+                <h4 class="gif-btn">Generera ny GIF</h4>
+              </div>
             </div>
             <div class="card note">
-              <h2 class="text">Anteckningar</h2>
+              <h2>Anteckningar</h2>
               <div class="noteboard">
                 <div
                   contenteditable="true"
@@ -72,7 +78,7 @@
         <footer>
           <div class="background">
             <div class="prompt-button">
-              <h4 class="center text">Sök ny bakgrund</h4>
+              <h4 class="center">Sök ny bakgrund</h4>
             </div>
           </div>
         </footer>

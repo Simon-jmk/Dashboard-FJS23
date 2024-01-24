@@ -34,7 +34,7 @@ const createLinkCard = (link, title) => {
   
   return`
   <div class="link-card">
-    <a href="${formattedLink}" target="_blank"><img src="${fetchFavicon(link)}" alt="Favicon" class="favicon"/></a>
+    <a href="${formattedLink}" target="_blank"><img src="${fetchFavicon(link)}" alt="${title} Favicon" class="favicon"/></a>
     <a class="link-text" href="${formattedLink}" target="_blank">${formattedTitle}</a>
     <button class="remove-btn" data-link="${link}"><img class="trash-bin" src="Trash-bin.svg" alt="Trash-bin"/></button>
   </div>

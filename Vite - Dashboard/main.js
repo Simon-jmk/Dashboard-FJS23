@@ -1,5 +1,3 @@
-import axios from "axios";
-
 // CLOCK
 let time = document.getElementById("time");
 
