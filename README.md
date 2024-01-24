@@ -27,7 +27,7 @@ To set up and run the project:
 3. Create a `.env` file in the `Vite - Dashboard` directory and add your API keys.
 4. Open a terminal and navigate to `Vite - Dashboard`.
 5. Run `npm install` to install the dependencies, including Vite and Axios.
-6. Start the application using `npm start`.
+6. Start the application using `npm run dev`.
 
 ## Data Persistence
 The application uses the browser's Local Storage to save user data. This approach ensures that user data like saved links, notes, and selected backgrounds remain consistent across page refreshes.
