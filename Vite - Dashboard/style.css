@@ -157,7 +157,7 @@ h2 {
     grid-area: links;
     justify-self: center;
     align-items: start;
-    width: 18rem;
+    height: 19rem;
 }
 
 .link-card {
