@@ -34,7 +34,7 @@ To set up and run the project:
 
 ## Data Persistence
 
-The application uses the browser's Local Storage to save user data. This approach ensures that user data like saved links, notes, and selected backgrounds remain consistent across page refreshes.
+The application uses the browser's Local Storage to save user data. This approach ensures that user data like saved links, notes and title remain consistent across page refreshes.
 
 ## Areas for Improvement
 
